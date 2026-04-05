@@ -1,0 +1,5 @@
+NOTE :
+cnn_model.h5 is a pre-trained CNN model for music genre classification. If you cannot download models/cnn_model.h5 from GitHub, please download it manually from here and place it in the models/ directory.
+
+
+https://drive.google.com/file/d/1FD2xfQioTBUBLJ9RfzQggcHIzN_b1eTr/view?usp=sharing

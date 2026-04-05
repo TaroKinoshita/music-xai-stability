@@ -1,0 +1,5 @@
+Method,Group,Mean CV,SD
+LIME,Prototypical,0.32,0.23
+LIME,Boundary,0.406,0.167
+IG,Prototypical,0.874,0.149
+IG,Boundary,0.885,0.075
