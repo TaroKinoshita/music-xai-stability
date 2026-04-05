@@ -24,7 +24,7 @@ In this project:
 ```
 project/
 ├── dataset/
-│   └── Data/genres_original/   # GTZAN .wav files
+│   └── Data/genres_original/   # Due to dataset size, GTZAN should be downloaded manually and create new file in the project folder
 ├── models/
 │   └── cnn_model.h5            # trained CNN model
 ├── Python/                     # main scripts
@@ -161,3 +161,4 @@ Some important output files are:
 - `IG_Explanation.py` and `LIME_Explanation.py` process all 50 selected songs, so they are not instant.
 - `stability_test_.py` is the heaviest script because each song is tested multiple times.
 - If you only want the final figures, you do not need to rerun everything from the beginning.
+- 
