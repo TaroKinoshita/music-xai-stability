@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -129,5 +127,23 @@ for r in results:
     ]
 pd.DataFrame(summary_rows).to_csv(os.path.join(OUTPUT_DIR, "summary_table_v2.csv"), index=False)
 print("summary_table.csv saved")
+
+
+bound_lime = bound["LIME_CV"].values
+bound_ig   = bound["IG_CV"].values
+
+t_rq3, p_rq3 = stats.ttest_rel(bound_lime, bound_ig)
+
+diff = bound_ig - bound_lime
+cohens_d_rq3 = diff.mean() / diff.std()
+
+print("\n")
+print("RQ3: LIME vs IG stability for boundary songs (paired t-test)")
+print(" ")
+print(f"  LIME  mean CV : {bound_lime.mean():.3f} ± {bound_lime.std():.3f}")
+print(f"  IG    mean CV : {bound_ig.mean():.3f} ± {bound_ig.std():.3f}")
+print(f"  t = {t_rq3:.3f},  p = {p_rq3:.6f}  {'*significant*' if p_rq3 < 0.05 else '(not significant)'}")
+print(f"  Cohen's d = {cohens_d_rq3:.3f}  ({'small' if abs(cohens_d_rq3)<0.5 else 'medium' if abs(cohens_d_rq3)<0.8 else 'large'})")
+print()
 
 print("\n Output is ", OUTPUT_DIR)
